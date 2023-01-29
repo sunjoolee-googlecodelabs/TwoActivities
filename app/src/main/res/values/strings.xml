@@ -7,4 +7,25 @@
     <string name="text_header">Message Received</string>
     <string name="button_second">Reply</string>
     <string name="editText_second">Enter Your Reply Here</string>
+    <string name="passage1">
+        Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1
+        Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1
+        Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1
+        Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1
+        Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1  Passage1
+    </string>
+    <string name="passage2">
+        Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2
+        Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2
+        Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2
+        Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2
+        Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2  Passage2
+    </string>
+    <string name="passage3">
+        Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3
+        Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3
+        Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3
+        Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3
+        Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3  Passage3
+    </string>
 </resources>

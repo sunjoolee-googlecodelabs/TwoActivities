@@ -15,7 +15,7 @@ private val TAG : String = MainActivity::class.java.simpleName.toString()
 val EXTRA_MESSAGE : String = "googleCodelabs.TwoActivities.extra.MESSAGE"
 
 //public
-val EXTRA_TEXT_BUTTON : String = "googleCodelabs.TwoActivities.extra.TEXT_BUTTON"
+val EXTRA_TEXT_BUTTON_NUM : String = "googleCodelabs.TwoActivities.extra.TEXT_BUTTON_NUM"
 
 //public
 val TEXT_REQUEST : Int = 1
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Text Button ${text_button_num} clicked!")
 
         intent = Intent(this, ThirdActivity::class.java)
-        intent.putExtra(EXTRA_TEXT_BUTTON, text_button_num)
+        intent.putExtra(EXTRA_TEXT_BUTTON_NUM, text_button_num)
 
         startActivity(intent)
     }
