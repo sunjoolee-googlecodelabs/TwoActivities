@@ -18,21 +18,27 @@
         android:gravity="center"
      >
         <Button
+            android:id="@+id/text_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Text One"/>
+            android:text="Text One"
+            android:onClick="textButtonClicked"/>
         <Button
+            android:id="@+id/text_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Text Two"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp"
+            android:onClick="textButtonClicked"/>
         <Button
+            android:id="@+id/text_button3"
             android:text="Text Three"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:onClick="textButtonClicked"/>
     </LinearLayout>
 
     <TextView
