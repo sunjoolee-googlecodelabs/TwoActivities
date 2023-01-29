@@ -37,6 +37,15 @@ class MainActivity : AppCompatActivity() {
 
         mReplyHeadTextView = findViewById(R.id.text_header_reply)
         mReplyTextView = findViewById(R.id.text_message_reply)
+
+        if(savedInstanceState != null){
+            val isVisible : Boolean = savedInstanceState.getBoolean("reply_visible")
+            if(isVisible){
+                mReplyHeadTextView.visibility = View.VISIBLE
+                mReplyTextView.visibility = View.VISIBLE
+                mReplyTextView.text = savedInstanceState.getString("reply_text")
+            }
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -65,8 +74,8 @@ class MainActivity : AppCompatActivity() {
             if(resultCode == RESULT_OK){
                 val reply = data?.getStringExtra(EXTRA_REPLY)
                 mReplyHeadTextView.visibility = View.VISIBLE
-                mReplyTextView.text = reply
                 mReplyTextView.visibility = View.VISIBLE
+                mReplyTextView.text = reply
             }
         }
     }
