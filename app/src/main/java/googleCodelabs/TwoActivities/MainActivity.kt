@@ -2,6 +2,7 @@ package googleCodelabs.TwoActivities
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -36,6 +37,15 @@ class MainActivity : AppCompatActivity() {
 
         mReplyHeadTextView = findViewById(R.id.text_header_reply)
         mReplyTextView = findViewById(R.id.text_message_reply)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        if (mReplyHeadTextView.visibility == View.VISIBLE) {
+            outState.putBoolean("reply_visible", true)
+            outState.putString("reply_text",mReplyTextView.text.toString());
+        }
     }
 
     fun launchSecondActivity(view: View) {
