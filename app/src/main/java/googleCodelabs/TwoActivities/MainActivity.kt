@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.PackageManagerCompat.LOG_TAG
 
 
 private val TAG : String = MainActivity::class.java.simpleName.toString()
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.d(TAG, "-------");
+        Log.d(TAG, "onCreate");
 
         mMessageEditText = findViewById(R.id.editText_main)
 
@@ -55,5 +59,30 @@ class MainActivity : AppCompatActivity() {
                 mReplyTextView.visibility = View.VISIBLE
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart");
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause");
+    }
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart");
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume");
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
     }
 }
