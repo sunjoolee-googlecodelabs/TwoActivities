@@ -3,7 +3,6 @@ package googleCodelabs.TwoActivities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -21,7 +20,7 @@ class SecondActivity : AppCompatActivity() {
 
         //Get the Intent that activated this Activity
         val intent: Intent = intent
-        val message : String? = intent.getStringExtra(googleCodelabs.TwoActivities.EXTRA_MESSAGE)
+        val message : String? = intent.getStringExtra(EXTRA_MESSAGE)
 
         val textView = findViewById<TextView>(R.id.text_message)
         textView.text = message
