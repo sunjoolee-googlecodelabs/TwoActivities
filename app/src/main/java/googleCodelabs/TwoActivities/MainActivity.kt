@@ -2,20 +2,19 @@ package googleCodelabs.TwoActivities
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.PackageManagerCompat.LOG_TAG
 
 
 private val TAG : String = MainActivity::class.java.simpleName.toString()
 
 //public
 val EXTRA_MESSAGE : String = "googleCodelabs.TwoActivities.extra.MESSAGE"
-
-//public
-val EXTRA_TEXT_BUTTON_NUM : String = "googleCodelabs.TwoActivities.extra.TEXT_BUTTON_NUM"
 
 //public
 val TEXT_REQUEST : Int = 1
@@ -31,10 +30,31 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Log.d(TAG, "-------");
+        Log.d(TAG, "onCreate");
+
         mMessageEditText = findViewById(R.id.editText_main)
 
         mReplyHeadTextView = findViewById(R.id.text_header_reply)
         mReplyTextView = findViewById(R.id.text_message_reply)
+
+        if(savedInstanceState != null){
+            val isVisible : Boolean = savedInstanceState.getBoolean("reply_visible")
+            if(isVisible){
+                mReplyHeadTextView.visibility = View.VISIBLE
+                mReplyTextView.visibility = View.VISIBLE
+                mReplyTextView.text = savedInstanceState.getString("reply_text")
+            }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        if (mReplyHeadTextView.visibility == View.VISIBLE) {
+            outState.putBoolean("reply_visible", true)
+            outState.putString("reply_text",mReplyTextView.text.toString());
+        }
     }
 
     fun launchSecondActivity(view: View) {
@@ -54,23 +74,34 @@ class MainActivity : AppCompatActivity() {
             if(resultCode == RESULT_OK){
                 val reply = data?.getStringExtra(EXTRA_REPLY)
                 mReplyHeadTextView.visibility = View.VISIBLE
-                mReplyTextView.text = reply
                 mReplyTextView.visibility = View.VISIBLE
+                mReplyTextView.text = reply
             }
         }
     }
 
-    fun textButtonClicked(view: View) {
-        val text_button_num : Int = when(view.id){
-            R.id.text_button1 -> 1
-            R.id.text_button2 -> 2
-            else -> 3
-        }
-        Log.d(TAG, "Text Button ${text_button_num} clicked!")
-
-        intent = Intent(this, ThirdActivity::class.java)
-        intent.putExtra(EXTRA_TEXT_BUTTON_NUM, text_button_num)
-
-        startActivity(intent)
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart");
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause");
+    }
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart");
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume");
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
     }
 }
